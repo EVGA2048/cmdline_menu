@@ -8,10 +8,11 @@
 3.*原理简单易上手
 
 使用方法：
-1. 将cmdline_menu.py添加到项目文件夹中
-2. 在需要打印菜单的程序中import cmdline_menu
-3. 在初始化部分设置menu菜单的规格（小 中 大）
-4. 调用cmdline_menu.函数即可使用
+1. 使用git clone将仓库克隆到本地
+2. 将cmdline_menu.py添加到项目文件夹中
+3. 在需要打印菜单的程序中import cmdline_menu
+4. 在初始化部分设置menu菜单的规格（小 中 大）
+5. 调用cmdline_menu.函数即可使用
 
 项目仓库中的example_main.py为一个示例主程序
 
