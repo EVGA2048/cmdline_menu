@@ -93,7 +93,7 @@ def singlespace():                                          #换行
     print(" ")
 
 def raw_text(text):                                         #打印文本
-    print(text)
+    print(headerSpace + text)
 
 def welcome_panel(motd):
     singlespace()
