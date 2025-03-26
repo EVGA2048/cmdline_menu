@@ -37,9 +37,13 @@ def initialize_menu_type(menu_type):
     print("debug:initialized = " + initialized + " menuType=" + menuType)
 
 
+
+
 def clear_cmdline_x10():                                    #生成10行空格用于清屏
     for _ in range(10):
         print(" ")
+
+
 
 def small_border():                                         #打印小尺寸边框
     print("+-----+-----+-----+-----+-----+-----+")
@@ -50,6 +54,8 @@ def medium_border():                                        #打印中尺寸边�
 def large_border():                                         #打印大尺寸边框
     print("+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+")
 
+
+
 def drawBorder(menuType):                                           #打印边框
     if menuType == "small":
         small_border()
@@ -59,6 +65,8 @@ def drawBorder(menuType):                                           #打印边�
     
     if menuType == "large":
         large_border()
+
+
 
 def header_space(menuType):
     global headerSpace
@@ -71,6 +79,8 @@ def header_space(menuType):
     if menuType == "large":
         headerSpace = "            "
     
+
+
 def create_option(sequence_number, option_text):            #新建选项
     global menuType
     if menuType == "small":
@@ -85,15 +95,23 @@ def create_option(sequence_number, option_text):            #新建选项
         print("            ")
         print(headerSpace + "            ["+ sequence_number +"]" + option_text)
 
+
+
 def read_selection():                                       #读取选项
     selection = int(input("请输入选项序号："))
     return selection
 
+
+
 def singlespace():                                          #换行
     print(" ")
 
+
+
 def raw_text(text):                                         #打印文本
     print(headerSpace + text)
+
+
 
 def welcome_panel(motd):
     singlespace()

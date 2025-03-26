@@ -48,7 +48,11 @@ def main_menu():
         case 2:
             change_menu_type()
         case 3:
+            cmdline_menu.drawBorder(menuType)
             print("debug: menuType=" + menuType)
+            cmdline_menu.drawBorder(menuType)
+            cmdline_menu.raw_text("请按任意键继续")
+            pause_key = input()
             main_menu()
 
 def change_menu_type():
