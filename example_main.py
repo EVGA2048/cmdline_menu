@@ -104,6 +104,7 @@ def change_menu_type():
             cmdline_menu.singlespace()
             cmdline_menu.raw_text("按任意键返回")
             cmdline_menu.drawBorder(menuType)
+            pause_key = input()
     
     main_menu()
 
