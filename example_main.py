@@ -50,6 +50,7 @@ def main_menu():
     cmdline_menu.create_option("1","打印large尺寸的world")  #设置选项
     cmdline_menu.create_option("2","更改菜单尺寸")          #设置选项
     cmdline_menu.create_option("3","显示菜单尺寸")          #设置选项
+    cmdline_menu.create_option("4","获取输入内容")          #设置选项
     cmdline_menu.singlespace()                             #单行空格
     cmdline_menu.drawBorder(menuType,border_style)         #绘制下边框
 
@@ -77,6 +78,30 @@ def main_menu():
             cmdline_menu.drawBorder(menuType,border_style)
             cmdline_menu.raw_text("请按任意键继续")
             pause_key = input()
+            main_menu()
+        case 4:
+            cmdline_menu.clear_cmdline_x10()
+            cmdline_menu.drawBorder(menuType,border_style)
+            cmdline_menu.singlespace()
+            cmdline_menu.singlespace()
+            print("获取输入内容")
+            cmdline_menu.singlespace()
+            cmdline_menu.singlespace()
+            cmdline_menu.drawBorder(menuType,border_style)
+
+            inputcontent = cmdline_menu.read_keyboardInput("请输入内容：")
+            
+            cmdline_menu.drawBorder(menuType,border_style)
+            cmdline_menu.singlespace()
+            cmdline_menu.singlespace()
+            print("您输入的内容为：")
+            print(inputcontent)
+            cmdline_menu.singlespace()
+            cmdline_menu.singlespace()
+            cmdline_menu.drawBorder(menuType,border_style)
+            cmdline_menu.raw_text("请按任意键继续")
+            pause_key = input()
+            cmdline_menu.clear_cmdline_x10()
             main_menu()
 
 

@@ -4,7 +4,7 @@
 # Last Update 2025/3/27Thr
 # appreciate to MuWinds’s support
 #
-# current version v1.0.1
+# current version v1.0.2
 #+----+----+----+----+----+----+----+----+----+----+----+
 
 #import time
@@ -183,6 +183,9 @@ def read_selection():                                       #读取选项
     selection = int(input("请输入选项序号："))
     return selection
 
+def read_keyboardInput(title):                              #读取用户键盘输入
+    content = str(input(title))
+    return content
 
 
 def singlespace():                                          #换行
