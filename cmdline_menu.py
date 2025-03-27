@@ -3,6 +3,8 @@
 # Developed by xxAp2005
 # Last Update 2025/3/27Thr
 # appreciate to MuWinds’s support
+#
+# current version v1.0.1
 #+----+----+----+----+----+----+----+----+----+----+----+
 
 #import time
