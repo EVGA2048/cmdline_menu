@@ -4,7 +4,7 @@
 # Last Update 2025/3/27Thr
 # appreciate to MuWinds’s support
 #
-# current version v1.0.2
+# current version v1.0.3
 #+----+----+----+----+----+----+----+----+----+----+----+
 
 #import time
@@ -42,14 +42,14 @@ def initialize_menu_type(menu_type,border_style):
     global menuType,borderStyle
     # 检查 menu_type 是否合法
     if menu_type not in ["small", "medium", "large"]:
-        print("无效的菜单类型. 选择 'small', 'medium', 或者 'large'.")
-        print("cmdlineMENU初始化失败，菜单类型已缺省为small！")
+        print("| WARN | 无效的菜单类型. 选择 'small', 'medium', 或者 'large'.")
+        print("| WARN | cmdlineMENU初始化失败，菜单类型已缺省为small！")
         menuType = "small"
     
     # 检查 border_style 是否合法
     if border_style not in ["solid", "dashed"]:
-        print("无效的边框样式. 选择 'solid' 或 'dashed'.")
-        print("边框样式已缺省为 solid！")
+        print("| WARN | 无效的边框样式. 选择 'solid' 或 'dashed'.")
+        print("| WARN | 边框样式已缺省为 solid！")
         borderStyle = "solid"
     else:
         borderStyle = border_style
@@ -72,6 +72,10 @@ def initialize_menu_type(menu_type,border_style):
 
 def clear_cmdline_x10():                                    #生成10行空格用于清屏
     for _ in range(10):
+        print(" ")
+
+def clear_cmdline_x20():                                    #生成20行空格用于清屏
+    for _ in range(20):
         print(" ")
 
 
@@ -200,9 +204,9 @@ def raw_text(text):                                         #打印文本
 
 def welcome_panel(motd):
     singlespace()
-    print(headerSpace + f"欢迎!  {username}     现在是 {formatted_date}")
+    print(headerSpace + f"欢迎!  {username}     今天是 {formatted_date}")
     singlespace()
-    raw_text(motd)  # 直接调用 raw_text 确保对齐
+    raw_text(motd)
 
 #def welcome_panel(motd):
 #    singlespace()
