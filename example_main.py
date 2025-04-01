@@ -7,6 +7,7 @@
 #+----+----+----+----+----+----+----+----+----+----+----+
 
 import cmdline_menu
+import time
 
 
 
@@ -51,6 +52,7 @@ def main_menu():
     cmdline_menu.create_option("2","更改菜单尺寸")          #设置选项
     cmdline_menu.create_option("3","显示菜单尺寸")          #设置选项
     cmdline_menu.create_option("4","获取输入内容")          #设置选项
+    cmdline_menu.create_option("5","带状态信息的打印示例")          #设置选项
     cmdline_menu.singlespace()                             #单行空格
     cmdline_menu.drawBorder(menuType,border_style)         #绘制下边框
 
@@ -104,6 +106,21 @@ def main_menu():
             cmdline_menu.clear_cmdline_x10()
             main_menu()
 
+        case 5:
+            cmdline_menu.clear_cmdline_x20()
+            cmdline_menu.echo_info("INFO","正在打印状态输出示例")
+            time.sleep(0.5)
+            cmdline_menu.echo_info("WARN","模拟输出警告信息")
+            time.sleep(0.5)
+            cmdline_menu.echo_info("ERROR","模拟输出错误信息")
+            time.sleep(0.5)
+            cmdline_menu.echo_info("FATAL","模拟输出严重错误信息")
+            time.sleep(0.5)
+            cmdline_menu.echo_info("INFO","示例已完成")
+            cmdline_menu.raw_text("请按任意键继续")
+            pause_key = input()
+            cmdline_menu.clear_cmdline_x10()
+            main_menu()
 
 
 #子面板 - 更改菜单尺寸

@@ -213,3 +213,6 @@ def welcome_panel(motd):
 #    print(headerSpace + "欢迎!  " + username + "     现在是 " + formatted_date)
 #    singlespace()
 #    raw_text(headerSpace + motd)
+
+def echo_info(status,text):
+    print("|" + " " + status + " " + "|" + " " + text)
