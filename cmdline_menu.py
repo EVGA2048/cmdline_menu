@@ -214,5 +214,6 @@ def welcome_panel(motd):
 #    singlespace()
 #    raw_text(headerSpace + motd)
 
+#打印带状态的信息
 def echo_info(status,text):
     print("|" + " " + status + " " + "|" + " " + text)
