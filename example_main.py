@@ -42,7 +42,7 @@ cmdline_menu.drawBorder(menuType,border_style)     #绘制下边框
 option = cmdline_menu.read_selection()             #读取选项
 
 
-#主菜单
+#主菜单菜单
 def main_menu():
     global option
     global menuType
@@ -182,14 +182,8 @@ def change_menu_type():
     cmdline_menu.clear_cmdline_x10()
     main_menu()
 
-match option:
-    case 1:
-        cmdline_menu.clear_cmdline_x10()
-        main_menu()
-        
-    case 2:
-        cmdline_menu.clear_cmdline_x10()
-        main_menu()
+#运行主菜单
+main_menu()
         
             
 
