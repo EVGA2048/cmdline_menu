@@ -91,6 +91,14 @@ def clear_cmdline_x20():                                    #生成20行空格�
     for _ in range(20):
         print(" ")
 
+def full_clear():
+    # Windows
+    if os.name == 'nt':
+        os.system('cls')
+    # Unix/Linux
+    else:
+        os.system('clear')
+
 
 
 def small_border(border_style):
