@@ -83,15 +83,15 @@ def initialize_menu_type(menu_type,border_style):
 
 
 
-def clear_cmdline_x10():                                    #生成10行空格用于清屏
+def clear_cmdline_x10():                                    #生成10行空格用于清屏（保留历史消息）
     for _ in range(10):
         print(" ")
 
-def clear_cmdline_x20():                                    #生成20行空格用于清屏
+def clear_cmdline_x20():                                    #生成20行空格用于清屏（保留历史消息）
     for _ in range(20):
         print(" ")
 
-def full_clear():
+def full_clear():                                           #调用系统清屏（不保留历史消息）
     # Windows
     if os.name == 'nt':
         os.system('cls')
@@ -219,7 +219,7 @@ def singlespace():                                          #换行
 
 
 def muiltspace(amount):
-    for _ in range(amount)
+    for _ in range(amount):
         print(" ")
 
 
