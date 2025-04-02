@@ -4,7 +4,10 @@
 # Last Update 2025/3/27Thr
 # appreciate to MuWinds’s support
 #
-# current version v1.0.4
+# current version v1.0.5
+#
+# 需要在项目requirements中添加的依赖有：
+# colorama
 #+----+----+----+----+----+----+----+----+----+----+----+
 
 #import time
@@ -13,12 +16,22 @@
 import datetime
 # 导入os模块
 import os
+#导入颜色库
+from colorama import Fore, Back, Style, init
+init(autoreset=True)  # 自动重置颜色
 
-
+#设置状态信息颜色
+INFO = Fore.LIGHTGREEN_EX + "INFO"
+DEBUG = Fore.LIGHTYELLOW_EX + "DEBUG"
+WARN = Fore.YELLOW + "WARN"
+ERROR = Fore.RED + "ERROR"
+FATAL = Fore.RED + "FATAL"
+TIMER = Fore.LIGHTBLUE_EX + "TIMER"
 
 enable_debug = "true"
 if enable_debug == "true":
     print("[cmdline_menu]已启用debug输出")
+    
 
 #检测是否执行初始化
 initialized = "false"
@@ -26,7 +39,7 @@ initialized = "false"
 #获取系统用户名
 username = os.getlogin()
 
-#初始化头空格全局变量
+#初始化头空格缺省全局变量
 headerSpace = "    "
 
 # 获取当前日期
@@ -42,14 +55,14 @@ def initialize_menu_type(menu_type,border_style):
     global menuType,borderStyle
     # 检查 menu_type 是否合法
     if menu_type not in ["small", "medium", "large"]:
-        print("| WARN | 无效的菜单类型. 选择 'small', 'medium', 或者 'large'.")
-        print("| WARN | cmdlineMENU初始化失败，菜单类型已缺省为small！")
+        echo_info(WARN,"无效的菜单类型. 选择 'small', 'medium', 或者 'large'.")
+        echo_info(WARN,"cmdlineMENU初始化失败，菜单类型已缺省为small！")
         menuType = "small"
     
     # 检查 border_style 是否合法
     if border_style not in ["solid", "dashed"]:
-        print("| WARN | 无效的边框样式. 选择 'solid' 或 'dashed'.")
-        print("| WARN | 边框样式已缺省为 solid！")
+        echo_info(WARN,"无效的边框样式. 选择 'solid' 或 'dashed'.")
+        echo_info(WARN,"边框样式已缺省为 solid！")
         borderStyle = "solid"
     else:
         borderStyle = border_style
@@ -197,6 +210,12 @@ def singlespace():                                          #换行
 
 
 
+def muiltspace(amount):
+    for _ in range(amount)
+        print(" ")
+
+
+
 def raw_text(text):                                         #打印文本
     print(headerSpace + text)
 
@@ -216,4 +235,16 @@ def welcome_panel(motd):
 
 #打印带状态的信息
 def echo_info(status,text):
-    print("|" + " " + status + " " + "|" + " " + text)
+    if (status == "INFO"):
+        rawstatus = INFO
+    if (status == "DEBUG"):
+        rawstatus = DEBUG
+    if (status == "WARN"):
+        rawstatus = WARN
+    if (status == "ERROR"):
+        rawstatus = ERROR
+    if (status == "FATAL"):
+        rawstatus = FATAL
+    if (status == "TIMER"):
+        rawstatus = TIMER
+    print("|" + " " + rawstatus + " " + Fore.RESET + "|" + " " + text)
