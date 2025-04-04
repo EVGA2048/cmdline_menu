@@ -21,9 +21,9 @@ from colorama import Fore, Back, Style, init
 init(autoreset=True)  # 自动重置颜色
 
 #设置状态信息颜色
-INFO = Fore.LIGHTGREEN_EX + "INFO"
+INFO = Fore.LIGHTGREEN_EX + "INFO "
 DEBUG = Fore.LIGHTYELLOW_EX + "DEBUG"
-WARN = Fore.YELLOW + "WARN"
+WARN = Fore.YELLOW + "WARN "
 ERROR = Fore.RED + "ERROR"
 FATAL = Fore.RED + "FATAL"
 TIMER = Fore.LIGHTBLUE_EX + "TIMER"
