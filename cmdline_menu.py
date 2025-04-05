@@ -91,6 +91,10 @@ def clear_cmdline_x20():                                    #生成20行空格�
     for _ in range(20):
         print(" ")
 
+def clear_cmdline_xN(N):                                    #生成N行空格用于清屏（保留历史消息）
+    for _ in range(N):
+        print(" ")
+
 def full_clear():                                           #调用系统清屏（不保留历史消息）
     # Windows
     if os.name == 'nt':
