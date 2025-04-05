@@ -2,12 +2,13 @@
 #                     CMDLINE_MENU
 # 这是一个示例程序
 # Developed by xxAp2005
-# Last Update 2025/4/2Wed
+# Last Update 2025/4/6Sat
 # 
 #+----+----+----+----+----+----+----+----+----+----+----+
 
 import cmdline_menu
 import time
+import datetime
 
 
 
@@ -52,7 +53,8 @@ def main_menu():
     cmdline_menu.create_option("2","更改菜单尺寸")          #设置选项
     cmdline_menu.create_option("3","显示菜单尺寸")          #设置选项
     cmdline_menu.create_option("4","获取输入内容")          #设置选项
-    cmdline_menu.create_option("5","带状态信息的打印示例")          #设置选项
+    cmdline_menu.create_option("5","带状态信息的打印示例")   #设置选项
+    cmdline_menu.create_option("6","时间和日期示例")   #设置选项
     cmdline_menu.singlespace()                             #单行空格
     cmdline_menu.drawBorder(menuType,border_style)         #绘制下边框
 
@@ -123,6 +125,9 @@ def main_menu():
             main_menu()
 
 
+        case 6:
+            time_and_date_panel()
+
 #子面板 - 更改菜单尺寸
 def change_menu_type():
     global option
@@ -181,6 +186,21 @@ def change_menu_type():
     #返回主菜单
     cmdline_menu.clear_cmdline_x10()
     main_menu()
+
+def time_and_date_panel():
+    while True:
+        now = datetime.datetime.now()
+        formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")
+        cmdline_menu.drawBorder("medium","dashed")
+        cmdline_menu.welcome_panel("日期和时间")
+        cmdline_menu.singlespace()
+        cmdline_menu.raw_text("当前时间    " + str(formatted_time))
+        cmdline_menu.singlespace()
+        cmdline_menu.drawBorder("medium","dashed")
+        time.sleep(1)
+        cmdline_menu.full_clear()
+
+    
 
 #运行主菜单
 main_menu()
