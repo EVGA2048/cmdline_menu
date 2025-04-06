@@ -255,16 +255,13 @@ def echo_info(status,text):
         rawstatus = DEBUG
     if (status == "WARN"):
         rawstatus = WARN
-        frequency = 2500  # 设置频率
-        duration = 200  # 设置持续时间（毫秒）
-        winsound.Beep(frequency, duration)
-        winsound.Beep(frequency, duration)
+        warn_sound()
     if (status == "ERROR"):
         rawstatus = ERROR
-        winsound.MessageBeep()
+        error_sound()
     if (status == "FATAL"):
         rawstatus = FATAL
-        winsound.MessageBeep()
+        fatal_sound()
     if (status == "TIMER"):
         rawstatus = TIMER
         frequency = 2500  # 设置频率
@@ -272,3 +269,26 @@ def echo_info(status,text):
         winsound.Beep(frequency, duration)
         winsound.Beep(frequency, duration)
     print("|" + " " + rawstatus + " " + Fore.RESET + "|" + " " + text)
+
+def warn_sound():
+    frequency = 2300  # 设置频率
+    duration = 200  # 设置持续时间（毫秒）
+    winsound.Beep(frequency, duration)
+    frequency = 2000
+    winsound.Beep(frequency, duration)
+
+def switch_sound():
+    frequency = 1200  # 设置频率
+    duration = 200  # 设置持续时间（毫秒）
+    winsound.Beep(frequency, duration)
+
+def fatal_sound():
+    frequency = 1700  # 设置频率
+    duration = 1000  # 设置持续时间（毫秒）
+    winsound.Beep(frequency, duration)
+
+def error_sound():
+    frequency = 2000
+    duration = 200
+    winsound.Beep(frequency, duration)
+    winsound.Beep(frequency, duration)

@@ -9,11 +9,8 @@
 import cmdline_menu
 import time
 import datetime
-import winsound
-frequency = 2500  # 设置频率
-duration = 500  # 设置持续时间（毫秒）
-winsound.Beep(frequency, duration)
-winsound.MessageBeep()
+
+cmdline_menu.switch_sound()
 
 
 
@@ -47,7 +44,7 @@ cmdline_menu.create_option("2","选项2")            #设置选项
 cmdline_menu.singlespace()                         #单行空格
 cmdline_menu.drawBorder(menuType,border_style)     #绘制下边框
 option = cmdline_menu.read_selection()             #读取选项
-
+cmdline_menu.switch_sound()
 
 #主菜单菜单
 def main_menu():
@@ -65,7 +62,7 @@ def main_menu():
     cmdline_menu.drawBorder(menuType,border_style)         #绘制下边框
 
     option = cmdline_menu.read_selection()                 #读取选项
-    
+    cmdline_menu.switch_sound()
     #对输入选项做出操作
     match option:
         case 1:
@@ -77,6 +74,7 @@ def main_menu():
             cmdline_menu.drawBorder(menuType,border_style)
             cmdline_menu.raw_text("请按任意键继续")
             pause_key = input()
+            cmdline_menu.switch_sound()
             main_menu()
         case 2:
             cmdline_menu.clear_cmdline_x10()
@@ -88,6 +86,7 @@ def main_menu():
             cmdline_menu.drawBorder(menuType,border_style)
             cmdline_menu.raw_text("请按任意键继续")
             pause_key = input()
+            cmdline_menu.switch_sound()
             main_menu()
         case 4:
             cmdline_menu.clear_cmdline_x10()
@@ -100,6 +99,7 @@ def main_menu():
             cmdline_menu.drawBorder(menuType,border_style)
 
             inputcontent = cmdline_menu.read_keyboardInput("请输入内容：")
+            cmdline_menu.switch_sound()
             
             cmdline_menu.drawBorder(menuType,border_style)
             cmdline_menu.singlespace()
@@ -111,6 +111,7 @@ def main_menu():
             cmdline_menu.drawBorder(menuType,border_style)
             cmdline_menu.raw_text("请按任意键继续")
             pause_key = input()
+            cmdline_menu.switch_sound()
             cmdline_menu.clear_cmdline_x10()
             main_menu()
 
@@ -120,13 +121,26 @@ def main_menu():
             time.sleep(0.5)
             cmdline_menu.echo_info("WARN","模拟输出警告信息")
             time.sleep(0.5)
+            cmdline_menu.echo_info("WARN","模拟输出警告信息")
+            time.sleep(0.5)
+            cmdline_menu.echo_info("WARN","模拟输出警告信息")
+            time.sleep(0.5)
             cmdline_menu.echo_info("ERROR","模拟输出错误信息")
+            time.sleep(0.5)
+            cmdline_menu.echo_info("ERROR","模拟输出错误信息")
+            time.sleep(0.5)
+            cmdline_menu.echo_info("ERROR","模拟输出错误信息")
+            time.sleep(0.5)
+            cmdline_menu.echo_info("FATAL","模拟输出严重错误信息")
+            time.sleep(0.5)
+            cmdline_menu.echo_info("FATAL","模拟输出严重错误信息")
             time.sleep(0.5)
             cmdline_menu.echo_info("FATAL","模拟输出严重错误信息")
             time.sleep(0.5)
             cmdline_menu.echo_info("INFO","示例已完成")
             cmdline_menu.raw_text("请按任意键继续")
             pause_key = input()
+            cmdline_menu.switch_sound()
             cmdline_menu.clear_cmdline_x10()
             main_menu()
 
@@ -152,6 +166,7 @@ def change_menu_type():
     cmdline_menu.drawBorder(menuType,border_style)
 
     option = cmdline_menu.read_selection()
+    cmdline_menu.switch_sound()
 
     match option:
         case 1:
