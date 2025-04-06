@@ -9,6 +9,12 @@
 import cmdline_menu
 import time
 import datetime
+import winsound
+frequency = 2500  # 设置频率
+duration = 500  # 设置持续时间（毫秒）
+winsound.Beep(frequency, duration)
+winsound.MessageBeep()
+
 
 
 

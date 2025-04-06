@@ -16,6 +16,8 @@
 import datetime
 # 导入os模块
 import os
+# 导入winsound库
+import winsound
 #导入颜色库
 from colorama import Fore, Back, Style, init
 init(autoreset=True)  # 自动重置颜色
@@ -253,10 +255,20 @@ def echo_info(status,text):
         rawstatus = DEBUG
     if (status == "WARN"):
         rawstatus = WARN
+        frequency = 2500  # 设置频率
+        duration = 200  # 设置持续时间（毫秒）
+        winsound.Beep(frequency, duration)
+        winsound.Beep(frequency, duration)
     if (status == "ERROR"):
         rawstatus = ERROR
+        winsound.MessageBeep()
     if (status == "FATAL"):
         rawstatus = FATAL
+        winsound.MessageBeep()
     if (status == "TIMER"):
         rawstatus = TIMER
+        frequency = 2500  # 设置频率
+        duration = 200  # 设置持续时间（毫秒）
+        winsound.Beep(frequency, duration)
+        winsound.Beep(frequency, duration)
     print("|" + " " + rawstatus + " " + Fore.RESET + "|" + " " + text)
