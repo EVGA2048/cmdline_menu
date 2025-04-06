@@ -1,10 +1,10 @@
 #+----+----+----+----+----+----+----+----+----+----+----+
 #                     CMDLINE_MENU
 # Developed by xxAp2005
-# Last Update 2025/3/27Thr
+# Last Update 2025/4/6Sun
 # appreciate to MuWinds’s support
 #
-# current version v1.0.5
+# current version v1.0.6
 #
 # 需要在项目requirements中添加的依赖有：
 # colorama
