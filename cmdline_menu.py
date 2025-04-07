@@ -22,6 +22,9 @@ import winsound
 from colorama import Fore, Back, Style, init
 init(autoreset=True)  # 自动重置颜色
 
+#设置版本号
+version = "1.0.6"
+
 #设置状态信息颜色
 INFO = Fore.LIGHTGREEN_EX + "INFO "
 DEBUG = Fore.LIGHTYELLOW_EX + "DEBUG"
@@ -70,20 +73,25 @@ def initialize_menu_type(menu_type,border_style):
         borderStyle = border_style
 
     if enable_debug == "true":
-        print("debug: at def_initialize_menu_type menuType设置为" + menu_type)
+        echo_info("DEBUG","at def_initialize_menu_type menuType设置为" + menu_type)
     menuType = menu_type
     initialized = "true"
     if enable_debug == "true":
-        print("debug: at def_initialize_menu_type initialized = " + initialized + " menuType=" + menuType)
+        echo_info("DEBUG","at def_initialize_menu_type initialized = " + initialized + " menuType=" + menuType)
+
+    if enable_debug == "true":
+        echo_info("DEBUG","cmdline_menu已启动，版本 " + version )
 
     # 调用 header_space 并传入 menuType
     header_space(menuType)  # 确保这里传入的是更新后的 menuType
     initialized = True
     if enable_debug == "true":
-        print(f"debug: at def_initialize_menu_type menuType={menuType}, borderStyle={borderStyle}, initialized={initialized}")
+        echo_info("DEBUG", f"at def_initialize_menu_type menuType={menuType}, borderStyle={borderStyle}, initialized={initialized}")
 
 
 
+def get_version():
+    return version
 
 def clear_cmdline_x10():                                    #生成10行空格用于清屏（保留历史消息）
     for _ in range(10):
@@ -164,7 +172,8 @@ def drawBorder(menuType , border_style):
 def header_space(menuType):
     global headerSpace
     if enable_debug == "true":
-        print("debug: at def_header_space menuType = " + menuType)
+        echo_info("DEBUG", "at def_header_space menuType = " + menuType)
+        
     if menuType == "small":
         headerSpace = " " * 6  # 6个空格，适配 small_border 的宽度
     
@@ -268,6 +277,8 @@ def echo_info(status,text):
         duration = 200  # 设置持续时间（毫秒）
         winsound.Beep(frequency, duration)
         winsound.Beep(frequency, duration)
+    else:
+        rawstatus = status
     print("|" + " " + rawstatus + " " + Fore.RESET + "|" + " " + text)
 
 def warn_sound():
