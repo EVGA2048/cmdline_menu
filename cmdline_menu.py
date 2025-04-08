@@ -33,6 +33,7 @@ ERROR = Fore.RED + "ERROR"
 FATAL = Fore.RED + "FATAL"
 TIMER = Fore.LIGHTBLUE_EX + "TIMER"
 
+enable_sound = True
 enable_debug = "true"
 if enable_debug == "true":
     print("[cmdline_menu]已启用debug输出")
@@ -282,24 +283,28 @@ def echo_info(status,text):
     print("|" + " " + rawstatus + " " + Fore.RESET + "|" + " " + text)
 
 def warn_sound():
-    frequency = 2300  # 设置频率
-    duration = 200  # 设置持续时间（毫秒）
-    winsound.Beep(frequency, duration)
-    frequency = 2000
-    winsound.Beep(frequency, duration)
+    if enable_sound == True:
+        frequency = 2300  # 设置频率
+        duration = 200  # 设置持续时间（毫秒）
+        winsound.Beep(frequency, duration)
+        frequency = 2000
+        winsound.Beep(frequency, duration)
 
 def switch_sound():
-    frequency = 1200  # 设置频率
-    duration = 200  # 设置持续时间（毫秒）
-    winsound.Beep(frequency, duration)
+    if enable_sound == True:
+        frequency = 1200  # 设置频率
+        duration = 200  # 设置持续时间（毫秒）
+        winsound.Beep(frequency, duration)
 
 def fatal_sound():
-    frequency = 1700  # 设置频率
-    duration = 1000  # 设置持续时间（毫秒）
-    winsound.Beep(frequency, duration)
+    if enable_sound == True:
+        frequency = 1700  # 设置频率
+        duration = 1000  # 设置持续时间（毫秒）
+        winsound.Beep(frequency, duration)
 
 def error_sound():
-    frequency = 2000
-    duration = 200
-    winsound.Beep(frequency, duration)
-    winsound.Beep(frequency, duration)
+    if enable_sound == True:
+        frequency = 2000
+        duration = 200
+        winsound.Beep(frequency, duration)
+        winsound.Beep(frequency, duration)
